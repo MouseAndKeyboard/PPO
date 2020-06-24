@@ -6,6 +6,8 @@ https://arxiv.org/pdf/1707.06347.pdf
 [[file:./images/code.svg]]
 
 #+BEGIN_SRC python :noweb yes :tangle yes
+import pytorch
+import gym
 
 <<policy>>
 
@@ -41,7 +43,29 @@ if __name__ == "__main__":
 :header-args: :noweb-ref policy
 :END:
 
+#+BEGIN_SRC python
+
+#+END_SRC
+
 ** Critic (Value)
 :PROPERTIES:
 :header-args: :noweb-ref value
 :END:
+
+* Collect Trajectories
+:PROPERTIES:
+:header-args: :noweb-ref collect-trajectories
+:END:
+
+Run the policy on the [[https://gym.openai.com/envs/BipedalWalker-v2/][BipedalWalker-v2]] environment and save what happens.
+#+BEGIN_SRC python
+trajectories = []
+for trajectory in range(samples):
+    done = False
+    obs = environment.reset()
+    while not done:
+        # select action from the policy
+        done = true
+    # trajectories.append(obs)
+
+#+END_SRC
