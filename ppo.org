@@ -1,1 +1,47 @@
 #+TITLE: Proximal Policy Optimisation (PPO)
+
+https://arxiv.org/pdf/1707.06347.pdf
+
+
+[[file:./images/code.svg]]
+
+#+BEGIN_SRC python :noweb yes :tangle yes
+
+<<policy>>
+
+<<value>>
+
+def main(args):
+
+    <<initialise>>
+
+    for k in range(100):
+        <<collect-trajectories>>
+
+        <<compute-rewards>>
+
+        <<compute-advantage-estimates>>
+
+        <<update-policy-via-ppo>>
+
+        <<fit-value-function>>
+        ...
+
+if __name__ == "__main__":
+    args = None
+    <<parse-arguments>>
+
+    main(args)
+
+#+END_SRC
+
+* Agent
+** Actor (Policy)
+:PROPERTIES:
+:header-args: :noweb-ref policy
+:END:
+
+** Critic (Value)
+:PROPERTIES:
+:header-args: :noweb-ref value
+:END:
